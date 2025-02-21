@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <title>@yield('title')</title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
     <style>
-        form {
+#for {
     width: 320px;
     margin: 50px auto;
     padding: 20px;
@@ -50,7 +51,7 @@ input:focus {
     border-color: #888;
 }
 
-button {
+#button {
     width: 100%;
     padding: 10px;
     background-color: #333;
@@ -61,8 +62,22 @@ button {
     cursor: pointer;
     transition: 0.3s;
 }
+#butt {
+    width: 50%;
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#butt:hover {
+    background-color: #ff0000;
+}
 
-button:hover {
+#button:hover {
     background-color: #555;
 }
 
@@ -71,11 +86,27 @@ button:hover {
     font-size: 12px;
 }
 
+
+table {
+    width: 80%; /* Adjust as needed */
+    margin: 20px auto; /* Centers the table horizontally */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
     </style>
 </head>
 <body>
     @yield('content')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>

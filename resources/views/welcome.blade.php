@@ -1,34 +1,59 @@
 @extends('base')
 @section('title', 'i cooked')
 <div>
-    
+
+  @if(session('success'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+
+  {{-- @if(session('success'))
+  <div class="alert alert-success">
+      {{ session('success') }}
+  </div>
+@endif --}}
     {{-- mao ni ang table na mo show sa mga list of students --}}
-    <table class="table">
+    <table >
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Gender</th>
-                <th scope="col">Address</th>
+                <th scope="col">Address</th>   
+                <th scope="col"></th>          
             </tr>
         </thead>
         <tbody>
             @foreach($students as $std)
             <tr>
-                <th scope="row">{{ $std -> id }}</th>
-                <td>{{ $std -> name }}</td>
+                <th>{{ $std -> id }}</th>
+                <td>{{ $std -> name }} </td>
                 <td>{{ $std -> age }}</td>
                 <td>{{ $std -> gender }}</td>
                 <td>{{ $std -> address }}</td>
+                <td>
+                  {{-- <form method="POST" action="/delete-post/{{$std->id}}">
+                  @csrf
+                  @method('DELETE')
+                  <button>delete</button> --}}
+                  <form action="{{ route('student.destroy', $std->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button id="butt" type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                </form> 
+                <button id="butt">update</button>
+              </td>                
             </tr>
             @endforeach
         </tbody>
     </table>
 
-    {{-- table for adding students --}}
-
-    <form method="POST" action="{{ route('std.createNew') }}">
+    {{-- ang form for adding students --}}
+    <form id="for" method="POST" action="{{ route('std.createNew') }}">
         @csrf
         <h2>add students</h2>
         <div>
@@ -59,7 +84,6 @@
             <span class="text-danger">{{ $message }}</span>
             @enderror
           </div>
-        <button type="submit">Submit</button>
-      </form>
-   
+        <button id="button" type="submit">Submit</button>
+      </form>    
 </div>

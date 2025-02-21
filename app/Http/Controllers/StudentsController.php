@@ -29,6 +29,21 @@ class StudentsController extends Controller
         $addNew->address = $request->address;
         $addNew->save();
 
-        return back();
+        return back()->with('success', 'Student added successfully!');
+    }
+
+    // public function deleteStd($id){
+
+    //     $student = Student::findOrFail($id); // Find student by ID
+    //     $student->delete(); // Delete student from database
+    
+    //     return redirect()->back()->with('success', 'Student deleted successfully!');
+
+    // }
+    public function destroy($id) {
+        $students = Students::findOrFail($id); // Find student by ID
+        $students->delete(); // Delete student from database
+    
+        return redirect()->back()->with('success', 'Student deleted successfully!');
     }
 }
