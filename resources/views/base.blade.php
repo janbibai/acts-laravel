@@ -76,6 +76,20 @@ input:focus {
 #butt:hover {
     background-color: #ff0000;
 }
+#but {
+    width: 50%;
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#but:hover {
+    background-color: #3cff00;
+}
 
 #button:hover {
     background-color: #555;

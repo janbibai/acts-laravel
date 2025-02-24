@@ -32,18 +32,47 @@ class StudentsController extends Controller
         return back()->with('success', 'Student added successfully!');
     }
 
-    // public function deleteStd($id){
+    // mao ni ang mo delete nga function
 
-    //     $student = Student::findOrFail($id); // Find student by ID
-    //     $student->delete(); // Delete student from database
-    
-    //     return redirect()->back()->with('success', 'Student deleted successfully!');
-
-    // }
     public function destroy($id) {
-        $students = Students::findOrFail($id); // Find student by ID
-        $students->delete(); // Delete student from database
+        $students = Students::findOrFail($id); 
+        $students->delete(); 
     
         return redirect()->back()->with('success', 'Student deleted successfully!');
     }
+
+    public function edit($id)
+    {
+        $students = Students::findOrFail($id); 
+        return view('edit-student', compact('students'));
+    }
+    public function update(Request $request, $id)
+{
+   
+    $request->validate([
+        'name' => 'required',
+        'age' => 'required|integer',
+        'gender' => 'required',
+        'address' => 'required',
+    ]);
+
+    
+    $students = Students::findOrFail($id);
+    $students->update([
+        'name' => $request->name,
+        'age' => $request->age,
+        'gender' => $request->gender,
+        'address' => $request->address,
+    ]);
+
+    
+    return redirect()->route('students.edit', $id)->with('success', 'Student updated successfully!');
+}
+
+    
+
+    // public function showEditScreen(Post $id){
+    //     return view('edit-post', ['post' => $id]);
+
+    // }
 }

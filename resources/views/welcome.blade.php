@@ -45,14 +45,14 @@
                     <button id="butt" type="submit" class="btn btn-danger">Delete</button>
                 </form>
                 </form> 
-                <button id="butt">update</button>
+                <p><a href="{{ route('students.edit', $std->id) }}"><button id="but" >update</button></a></p>
               </td>                
             </tr>
             @endforeach
         </tbody>
     </table>
 
-    {{-- ang form for adding students --}}
+    {{-- mao ni ang form for adding students --}}
     <form id="for" method="POST" action="{{ route('std.createNew') }}">
         @csrf
         <h2>add students</h2>

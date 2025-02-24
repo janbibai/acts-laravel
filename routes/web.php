@@ -11,7 +11,6 @@ Route::post('/create', [StudentsController::class, 'createNewStd'])->name('std.c
 
 Route::delete('/delete-student/{id}', [StudentsController::class, 'destroy'])->name('student.destroy');
 
-// Route::delete('/delete-student/{id}', [StudentsController::class, 'deleteStd']);
-// Route::get('/', function () {
-//     return view('welcome');
-;
+
+Route::get('/edit-student/{id}', [StudentsController::class, 'edit'])->name('students.edit');
+Route::put('/update-student/{id}', [StudentsController::class, 'update'])->name('students.update');
