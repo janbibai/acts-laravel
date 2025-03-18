@@ -2,12 +2,20 @@
 @section('title', 'i cooked')
 <div>
 
-  @if(session('success'))
+  {{-- @if(session('success'))
   <div class="alert alert-success alert-dismissible fade show" role="alert">
       {{ session('success') }}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-  @endif
+  @endif --}}
+  @if(session('success'))
+     <div class="alert alert-success alert-dismissible fade show" id="success">
+         {{ Session::get('success') }}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     </div>
+     @endif
+  
+  
   <a href="{{ route('auth.logout')}}" class="btn btn-danger" style="float: right;">Logout</a>
 
     {{-- mao ni ang table na mo show sa mga list of students --}}
