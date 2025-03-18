@@ -9,11 +9,14 @@
   </div>
   @endif
 
+<<<<<<< HEAD
   {{-- @if(session('success'))
   <div class="alert alert-success">
       {{ session('success') }}
   </div>
 @endif --}}
+=======
+>>>>>>> 1cebb0a (added a login function)
     {{-- mao ni ang table na mo show sa mga list of students --}}
     <table >
         <thead>
