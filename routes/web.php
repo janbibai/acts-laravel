@@ -2,9 +2,6 @@
 //this is where you call everything to function in the website
 //test bc naboang ako git
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentsController;
-
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;

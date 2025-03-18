@@ -63,23 +63,23 @@ class StudentsController extends Controller
         'age' => $request->age,
         'gender' => $request->gender,
         'address' => $request->address,
-<<<<<<< HEAD
+
     ]);
 
     
-=======
-    ]);  
->>>>>>> 1cebb0a (added a login function)
+
+    
+
     return redirect()->route('students.edit', $id)->with('success', 'Student updated successfully!');
 }
 
     
-<<<<<<< HEAD
+
 
     // public function showEditScreen(Post $id){
     //     return view('edit-post', ['post' => $id]);
 
     // }
-=======
->>>>>>> 1cebb0a (added a login function)
+
+
 }
