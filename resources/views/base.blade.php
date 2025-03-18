@@ -19,6 +19,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
 h2 {
     text-align: center;
     text-transform: uppercase;
@@ -102,9 +103,12 @@ input:focus {
 
 
 table {
-    width: 80%; /* Adjust as needed */
+    width: 70%; /* Adjust as needed */
     margin: 20px auto; /* Centers the table horizontally */
     border-collapse: collapse;
+}
+table {
+    margin-top: 50px;
 }
 
 th, td {

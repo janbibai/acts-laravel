@@ -66,10 +66,6 @@ class StudentsController extends Controller
 
     ]);
 
-    
-
-    
-
     return redirect()->route('students.edit', $id)->with('success', 'Student updated successfully!');
 }
 

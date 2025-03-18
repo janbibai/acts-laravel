@@ -22,7 +22,7 @@
 
         <div class="mb-3">
             <label class="form-label">Password</label>
-            <input type="text" name="password" id="password" value="{{old('password')}}" class="form-control" placeholder="enter your password" required>
+            <input type="password" name="password" id="password" value="{{old('password')}}" class="form-control" placeholder="enter your password" required>
         </div>
 
         <button type="submit" class="btn btn-success">Login</button>

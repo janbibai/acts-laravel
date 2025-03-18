@@ -5,6 +5,9 @@ namespace App\Http\Controllers\auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -30,5 +33,16 @@ class AuthController extends Controller
          } else {
              return back()->with('fail', 'Email or password is incorrect');
          }
+     }
+
+     public function logout(){
+
+        if (Session::has('loginId')) {
+            Session::pull('loginId');
+            return redirect()->route('auth.index')->with('success', 'Logout successfully');
+        } else {
+            return redirect()->route('auth.index')->with('error', 'You are not logged in');
+        }
+
      }
 }

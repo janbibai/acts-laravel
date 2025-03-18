@@ -8,7 +8,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   @endif
-
+  <a href="{{ route('auth.logout')}}" class="btn btn-danger" style="float: right;">Logout</a>
 
     {{-- mao ni ang table na mo show sa mga list of students --}}
     <table >
